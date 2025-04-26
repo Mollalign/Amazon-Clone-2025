@@ -89,7 +89,7 @@ const Header = () => {
       <div
         className={`
           md:hidden transition-all duration-300 ease-in-out origin-top transform
-          ${mobileMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 h-0'}
+          ${mobileMenuOpen ? 'scale-y-100 opacity-100 h-auto' : 'scale-y-0 opacity-0 h-0'}
         `}
         style={{ transformOrigin: 'top' }}
       >
