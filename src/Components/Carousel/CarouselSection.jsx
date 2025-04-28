@@ -18,7 +18,7 @@ const CarouselSection = () => {
           })
         }
       </Carousel> 
-      <div className="absolute bottom-0 left-0 w-full h-[100px] md:h-[220px] before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-b before:from-transparent before:to-white"></div>
+      <div className="absolute bottom-0 left-0 w-full h-[110px] md:h-[230px] before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-b before:from-transparent before:to-white"></div>
     </div>
   )
 }
