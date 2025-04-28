@@ -1,14 +1,14 @@
 import React from 'react';
 import Rating from '@mui/material/Rating';
-import CurrencyFormat from './CurrencyFormat/CurrencyFormat';
+import CurrencyFormat from '../CurrencyFormat/CurrencyFormat';
 
 const ProductCard = ({ product }) => {
   const { image, title, rating, price } = product;
 
   return (
-    <div className="relative flex flex-col bg-white rounded-2xl shadow-md p-3 w-[185px] md:w-[250px] hover:shadow-xl transition duration-300">
+    <div className="relative flex flex-col bg-white rounded-2xl shadow-md p-3 w-[165px] md:w-[250px] hover:shadow-xl transition duration-300">
       <a href="#" className="flex justify-center">
-        <img src={image} alt={title} className="h-36 object-contain mb-3" />
+        <img loading="lazy" src={image} alt={title} className="h-36 object-contain mb-3" />
       </a>
       <div className="flex flex-col flex-grow">
       <h3 className="text-xs font-medium text-gray-800 mb-2 min-h-[2.5rem]">{title}</h3>
