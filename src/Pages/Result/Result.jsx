@@ -27,7 +27,7 @@ const Result = () => {
       <section className='bg-gray-100 py-10 px-4 min-h-screen max-w-7xl mx-auto'>
         <h1 className='p-[30px]'>Results</h1>
         <p className="p-[30px]">Category / {categoryName}</p>
-        <hr />
+        <hr className='text-gray-500 mb-6'/>
         {isLoading ? (<Loader/>) : (
           <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {results?.map((product) => (

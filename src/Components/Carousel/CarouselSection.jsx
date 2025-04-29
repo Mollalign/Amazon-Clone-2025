@@ -5,7 +5,7 @@ import { img } from './data'
 
 const CarouselSection = () => {
   return (
-    <div className="relative"> {/* Make the main wrapper relative */}
+    <div className="relative pt-26.3">
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
