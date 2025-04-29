@@ -13,13 +13,13 @@ export const categoryInfos = [
 
   {
     title: "Men's Clothing",
-    name: "Men's Clothing",
+    name: "men's clothing",
     imgLink: "https://m.media-amazon.com/images/I/611N3upKEpL._AC_UL320_.jpg"
   },
 
   {
-    title: "Shop for your home essentials",
-    name: "home essentials",
-    imgLink: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v3._SY304_CB573698005_.jpg"
+    title: "Jewelry",
+    name: "jewelery",
+    imgLink: "https://m.media-amazon.com/images/I/41qFNfCjC9L._AC_UL320_.jpg"
   }
 ];
