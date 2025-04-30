@@ -1,4 +1,3 @@
-import { useReducer } from "react"
 import { Type } from "./action.type"
 
 export const initialState = {

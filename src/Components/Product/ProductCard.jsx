@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
 import CurrencyFormat from '../CurrencyFormat/CurrencyFormat';
-import { DataContext } from '../DataProvider/DataProvider';
+import DataContext from '../DataProvider/DataContext';
 import { Type } from '../../Utility/action.type';
 
 const ProductCard = ({ product, flex, renderDesc}) => {
