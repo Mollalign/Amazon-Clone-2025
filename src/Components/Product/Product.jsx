@@ -28,7 +28,11 @@ const Product = () => {
           <div className="flex justify-center">
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-8 md:gap-x-12">
               {products?.map((singleProduct) => (
-                <ProductCard key={singleProduct.id} product={singleProduct} />
+                <ProductCard
+                  key={singleProduct.id} 
+                  product={singleProduct}
+                  renderAdd={true}
+                />
               ))}
             </div>
           </div>

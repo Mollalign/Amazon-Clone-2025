@@ -7,7 +7,7 @@
 // import { BiCart } from "react-icons/bi";
 // import { HiOutlineMenu } from "react-icons/hi";
 // import LowerHeader from "./LowerHeader";
-// import { DataContext } from "../DataProvider/DataProvider";
+// import DataContext from "../DataProvider/DataContext";
 
 // const Header = () => {
 //   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,6 +34,10 @@
 //   }, [mobileMenuOpen]);
 
 //   const [{basket}, dispatch] = useContext(DataContext)
+
+//   const totalItem = basket?.reduce((amount, item) => {
+//     return (item.price * item.amount) + amount 
+//   }, 0);
   
 //   return ( 
 //     <section className="w-full fixed z-50">
@@ -91,7 +95,7 @@
 
 //             <Link to="/cart" className="relative flex items-end text-white border border-transparent hover:border-white px-2 pb-1 pt-3 rounded">
 //               <div className="relative">
-//                 <span className="absolute -top-4 left-3 text-orange-400 font-bold text-lg">{basket.length}</span>
+//                 <span className="absolute -top-4 left-3 text-orange-400 font-bold text-lg">{totalItem}</span>
 //                 <BiCart className="text-3xl text-white" />
 //               </div>
 //               <p className="ml-1 font-bold text-sm">Cart</p>
@@ -156,7 +160,7 @@
 //                   className="flex items-center py-4 px-2 rounded hover:bg-[#37475a]"
 //                 >
 //                   <div className="relative">
-//                     <span className="absolute -top-4 left-3 text-orange-400 font-bold text-lg">{basket.length}</span>
+//                     <span className="absolute -top-4 left-3 text-orange-400 font-bold text-lg">{totalItem}</span>
 //                     <BiCart className="text-3xl text-white" />
 //                   </div>
 //                   <p className="ml-2 font-bold text-white text-sm">Cart</p>

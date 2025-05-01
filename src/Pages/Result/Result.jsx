@@ -24,17 +24,17 @@ const Result = () => {
   
   return (
     <LayOut>
-      <section className='bg-gray-100 py-10 px-4 min-h-screen max-w-7xl mx-auto'>
-        <h1 className='p-[30px]'>Results</h1>
-        <p className="p-[30px]">Category / {categoryName}</p>
+      <section className='bg-gray-100 py-10 px-4 min-h-screen max-w-7xl mx-auto pt-[203px] md:pt-[100px]'>
+        <h1 className='p-[30px] font-bold'>Results</h1>
+        <p className="p-[30px]">Category / <span className='font-bold'>{categoryName}</span></p>
         <hr className='text-gray-500 mb-6'/>
         {isLoading ? (<Loader/>) : (
           <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {results?.map((product) => (
             <ProductCard
               key={product.id}
-
               product={product}
+              renderAdd={true}
             />
           ))}
         </div>

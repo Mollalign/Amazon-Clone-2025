@@ -11,7 +11,10 @@ import DataContext from "../DataProvider/DataContext";
 
 
 const Header = () => {
-  const [{basket}] = useContext(DataContext)
+  const [{basket}] = useContext(DataContext);
+  const totalItem = basket?.reduce((amount, item) => {
+    return (item.price * item.amount) + amount 
+  }, 0);
 
   return (
     <header className="w-full fixed z-50">
@@ -73,7 +76,7 @@ const Header = () => {
           {/* Cart */}
           <Link to="/cart" className="relative flex items-end text-white hover:border-white border border-transparent px-2 pt-3 pb-1 rounded">
             <div className="relative">
-              <span className="absolute -top-4 left-3 text-orange-400 font-bold text-lg">{basket.length}</span>
+              <span className="absolute -top-4 left-3 text-orange-400 font-bold text-lg">{totalItem}</span>
               <BiCart className="text-3xl" />
             </div>
             <p className="ml-1 font-bold text-sm">Cart</p>

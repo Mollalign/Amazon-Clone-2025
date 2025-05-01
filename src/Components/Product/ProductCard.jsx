@@ -5,7 +5,7 @@ import CurrencyFormat from '../CurrencyFormat/CurrencyFormat';
 import DataContext from '../DataProvider/DataContext';
 import { Type } from '../../Utility/action.type';
 
-const ProductCard = ({ product, flex, renderDesc}) => {
+const ProductCard = ({ product, flex, renderDesc, renderAdd}) => {
   const { image, title, id, rating, price, description} = product;
 
   const [state, dispatch] = useContext(DataContext);
@@ -20,10 +20,11 @@ const ProductCard = ({ product, flex, renderDesc}) => {
   }
 
   return (
-    <div
+    <section className={``}>
+      <div
       className={`relative bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 
       ${flex 
-        ? 'flex flex-col lg:flex-row gap-6 w-full p-6 sm:p-10 items-center lg:items-start' 
+        ? 'flex flex-col lg:flex-row gap-6 mx-auto w-[85%] p-6 sm:p-10 items-center lg:items-start' 
         : 'flex flex-col w-[165px] md:w-[250px] p-3'
       }`}
     >
@@ -58,7 +59,8 @@ const ProductCard = ({ product, flex, renderDesc}) => {
           <CurrencyFormat amount={price} />
         </div>
 
-        <button
+        {
+          renderAdd && <button
           className={`mt-auto bg-yellow-400 hover:bg-yellow-500 text-black text-sm font-semibold py-2 px-4 rounded-full transition duration-300 cursor-pointer
           ${flex ? 'self-start w-[150px]' : ''}`}
 
@@ -66,8 +68,11 @@ const ProductCard = ({ product, flex, renderDesc}) => {
         >
           Add to Cart
         </button>
+        }
+
       </div>
-    </div>
+      </div>
+    </section>
   );
 };
 
