@@ -22,7 +22,7 @@ const ProductDetail = () => {
   }, [productId])
   return (
     <LayOut>
-     <div className='pt-[100px] md:pt-[100px]'>
+     <div className='pt-[200px] md:pt-[100px]'>
       {isLoading? (<Loader/>) : (<ProductCard
           product={product}
           flex={true}

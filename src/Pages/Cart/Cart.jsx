@@ -28,7 +28,7 @@ const Cart = () => {
 
   return (
     <LayOut>
-      <section className="pt-[120px] md:pt-[120px] p-4 flex flex-col lg:flex-row gap-8 mb-5">
+      <section className="pt-[230px] md:pt-[120px] p-4 flex flex-col lg:flex-row gap-8 mb-5">
         
         {/* Cart Items */}
         <div className="flex-1">
