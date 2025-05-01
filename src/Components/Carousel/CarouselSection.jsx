@@ -5,7 +5,7 @@ import { img } from './data'
 
 const CarouselSection = () => {
   return (
-    <div className='pt-[206px] md:pt-[107px]'>
+    <div className='pt-[104px] md:pt-[104px]'>
       <div className="relative">
         <Carousel
           autoPlay={true}
