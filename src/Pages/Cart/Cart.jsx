@@ -28,12 +28,12 @@ const Cart = () => {
 
   return (
     <LayOut>
-      <section className="pt-[230px] md:pt-[120px] p-4 flex flex-col lg:flex-row gap-8 mb-5">
+      <section className="pt-[234px] md:pt-[120px] p-4 flex flex-col lg:flex-row gap-8 mb-5">
         
         {/* Cart Items */}
         <div className="flex-1">
           <h3 className="text-xl md:text-2xl font-semibold mb-2 text-gray-800">
-            {user ? `Hello, ${user.name || 'Guest'}` : 'Your Shopping Cart'}
+            {user ? `Hello, ${user?.email.split("@")[0] || 'Guest'}` : 'Your Shopping Cart'}
           </h3>
           <hr className="mb-4 border-gray-300" />
           <div className="space-y-4">

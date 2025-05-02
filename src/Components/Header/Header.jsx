@@ -8,12 +8,13 @@ import { SlLocationPin } from "react-icons/sl";
 import { BiCart } from "react-icons/bi";
 import LowerHeader from './LowerHeader';
 import DataContext from "../DataProvider/DataContext";
+import {auth} from "../../Utility/firebase";
 
 
 const Header = () => {
-  const [{basket}] = useContext(DataContext);
+  const [{user, basket}] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
-    return (item.price * item.amount) + amount 
+    return item.amount + amount 
   }, 0);
 
   return (
@@ -52,7 +53,7 @@ const Header = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex items-center gap-4 md:gap-4 text-xs font-medium whitespace-nowrap">
+        <div className="flex items-center gap-4 md:gap-4 text-xs font-medium whitespace-nowrap mt-1 md:mt-0">
           {/* Language */}
           <div className="hidden md:flex items-center gap-1 cursor-pointer hover:border-white border border-transparent px-2 py-1 rounded">
             <img src={usaIcon} className="w-4 h-3" alt="USA Flag" loading="lazy" />
@@ -62,9 +63,25 @@ const Header = () => {
           </div>
 
           {/* Account */}
-          <Link to="/auth" className="leading-tight hover:border-white border border-transparent px-2 py-1 rounded">
-            <p>Hello, sign in</p>
-            <p className="font-bold text-sm">Account & Lists</p>
+          <Link to={ !user && "/auth"} 
+            className="leading-tight hover:border-white border border-transparent px-2 py-1 rounded">
+            <div onClick={() => auth.signOut()}>
+              {
+                user ? (
+                  <>
+                    <p>Hello <span className="text-orange-400">{user?.email?.split("@")[0]}</span></p>
+                    
+                    <span className="">Sign Out</span>
+                  </>
+                 
+                ) : (
+                  <>
+                   <p>Hello, sign in</p>
+                   <p className="font-bold text-sm">Account & Lists</p>
+                  </>                 
+                )                
+              }          
+            </div>
           </Link>
 
           {/* Orders */}
