@@ -2,29 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CategoryCard = ({ data }) => {
+  const { title, name, imgLink } = data;
+
   return (
     <Link
-      to={`/category/${data.name}`}
-      className="bg-white rounded-md border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden cursor-pointer w-[300px] min-h-[300px] flex flex-col justify-between p-4 no-underline"
+      to={`/category/${name}`}
+      className="bg-white rounded-lg border border-gray-200 shadow hover:shadow-md transition-shadow duration-300 overflow-hidden cursor-pointer w-[300px] min-h-[300px] flex flex-col justify-between p-4 no-underline"
     >
       {/* Title */}
-      <div>
-        <h2 className="text-lg font-bold text-gray-800 mb-4 leading-tight">
-          {data.title}
-        </h2>
+      <h2 className="text-xl font-semibold text-gray-800 mb-3">{title}</h2>
 
-        {/* Main Image */}
-        <div className="w-full h-[200px] flex items-center justify-center">
-          <img
-            src={data.imgLink}
-            alt={data.name}
-            className="max-h-full object-contain"
-          />
-        </div>
+      {/* Image */}
+      <div className="w-full h-[200px] flex items-center justify-center">
+        <img
+          src={imgLink}
+          alt={title}
+          className="max-h-full max-w-full object-contain"
+          loading="lazy"
+        />
       </div>
 
-      {/* Bottom Text */}
-      <div className="mt-4">
+      {/* CTA */}
+      <div className="mt-4 pl-1.5">
         <span className="text-blue-600 text-sm font-semibold hover:underline">
           Shop now
         </span>

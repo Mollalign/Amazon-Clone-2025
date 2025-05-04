@@ -8,10 +8,11 @@ import CurrencyFormat from '../../Components/CurrencyFormat/CurrencyFormat';
 import { axiosInstance } from '../../Api/axios';
 import { db } from '../../Utility/firebase';
 import { useNavigate } from 'react-router-dom';
+import { Type } from '../../Utility/action.type';
 
 
 const Payment = () => {
-  const [{ user, basket }] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   const stripe = useStripe();
   const elements = useElements();
   const navigate = useNavigate();
@@ -55,6 +56,11 @@ const Payment = () => {
         basket: basket,
         amount: paymentIntent.amount / 100,
         created: paymentIntent.created,
+      });
+
+      // empty the basket
+      dispatch({
+        type: Type.EMPTY_BASKET
       });
 
       setLoading(false);
