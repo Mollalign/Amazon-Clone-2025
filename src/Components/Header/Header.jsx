@@ -38,14 +38,14 @@ const Header = () => {
         </div>
 
         {/* Middle Section (Search Bar) */}
-        <div className="flex w-[80%] md:max-w-[575px] h-10 flex-grow md:">
+        <div className="flex w-[80%] md:max-w-[575px] h-10 flex-grow mx-auto md:mx-0">
           <select className="bg-gray-200 text-black text-[13px] font-bold px-2 rounded-l-md border border-gray-300 w-[60px]">
             <option>All</option>
           </select>
           <input
             type="text"
             placeholder="Search Amazon"
-            className="flex-grow px-3 py-1 text-black text-sm bg-white outline-none"
+            className="max-w-[60%] md:max-w-full flex-grow px-3 py-1 text-black text-sm bg-white outline-none"
           />
           <button className="bg-[#FEBD69] hover:bg-[#F3A847] px-4 rounded-r-md flex items-center justify-center">
             <BsSearch className="text-black text-lg" />
