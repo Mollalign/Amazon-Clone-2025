@@ -1,0 +1,7 @@
+.flex_item img {
+  width: 80px !important;
+}
+
+.flex_item div{
+  height: auto !important;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { auth } from '../../Utility/firebase'
 import {
   createUserWithEmailAndPassword,
@@ -20,6 +20,7 @@ const Auth = () => {
 
   const [{ user }, dispatch] = useContext(DataContext)
   const navigate = useNavigate();
+  const navStateData = useLocation();
 
 
   const authHandler = async (e) => {
@@ -37,13 +38,13 @@ const Auth = () => {
         const userInfo = await signInWithEmailAndPassword(auth, email, password)
         dispatch({ type: Type.SET_USER, user: userInfo.user })
         setLoading(prev => ({ ...prev, signIn: false }))
-        navigate("/");
+        navigate(navStateData?.state.redirect || "/");
       } else {
         setLoading(prev => ({ ...prev, signUp: true }))
         const userInfo = await createUserWithEmailAndPassword(auth, email, password)
         dispatch({ type: Type.SET_USER, user: userInfo.user })
         setLoading(prev => ({ ...prev, signUp: false }))
-        navigate("/");
+        navigate(navStateData?.state.redirect || "/");
       }
       setError("")
     } catch (err) {
@@ -66,6 +67,11 @@ const Auth = () => {
       {/* Auth Form */}
       <div className='w-[330px] bg-white mt-4 p-6 border border-gray-300 rounded-md shadow-sm mb-10'>
         <h1 className='text-2xl font-semibold mb-5'>Sign-In</h1>
+        {navStateData?.state?.msg && (
+          <div className="bg-red-100 border border-red-300 text-red-700 text-sm p-1.5 rounded-lg text-center font-semibold mb-2">
+            {navStateData?.state?.msg}
+          </div>
+        )}
         <form className='flex flex-col gap-4' onSubmit={authHandler}>
           {/* Email */}
           <div className='flex flex-col gap-1'>
