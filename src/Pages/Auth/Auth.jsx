@@ -38,7 +38,7 @@ const Auth = () => {
         const userInfo = await signInWithEmailAndPassword(auth, email, password)
         dispatch({ type: Type.SET_USER, user: userInfo.user })
         setLoading(prev => ({ ...prev, signIn: false }))
-        navigate(navStateData?.state.redirect || "/");
+        navigate(navStateData?.state?.redirect || "/");
       } else {
         setLoading(prev => ({ ...prev, signUp: true }))
         const userInfo = await createUserWithEmailAndPassword(auth, email, password)
